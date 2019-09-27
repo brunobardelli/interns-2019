@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
 
+  arrArticles = [];
+
   constructor(private articlesService: ArticlesService) { }
 
   ngOnInit() {
     this.articlesService.getAll().subscribe((res) => {
       console.log(res);
+      this.arrArticles = res;
     });
   }
 
